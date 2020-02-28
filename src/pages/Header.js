@@ -1,10 +1,14 @@
 import React from "react";
+import { Link } from "gatsby";
 import { Box, Heading, Flex, Text, Button } from "@chakra-ui/core";
+import slugify from "slugify";
 
 const MenuItems = ({ children }) => (
-  <Text mt={{ base: 4, md: 0 }} mr={6} display="block">
-    {children}
-  </Text>
+  <Link to={`/${slugify(children)}`}>
+    <Text mt={{ base: 4, md: 0 }} px={3} display="block">
+      {children}
+    </Text>
+  </Link>
 );
 
 const Header = props => {
@@ -17,15 +21,15 @@ const Header = props => {
       align="center"
       justify="space-between"
       wrap="wrap"
-      padding="1.5rem 3rem"
-      bg="purple.800"
-      color="white"
+      padding="0 0 2rem 0"
       {...props}
     >
       <Flex align="center" mr={5}>
-        <Heading as="h1" size="lg" letterSpacing={"-.1rem"}>
-          Chakra UI
-        </Heading>
+        <Link to="/">
+          <Heading as="h1" size="lg" letterSpacing={"-.1rem"}>
+            Soley Solutions
+          </Heading>
+        </Link>
       </Flex>
 
       <Box display={{ sm: "block", md: "none" }} onClick={handleToggle}>
@@ -47,9 +51,9 @@ const Header = props => {
         flexGrow={1}
         justifyContent="flex-end"
       >
-        <MenuItems>Docs</MenuItems>
-        <MenuItems>Examples</MenuItems>
+        <MenuItems>About</MenuItems>
         <MenuItems>Blog</MenuItems>
+        <MenuItems>Contact us</MenuItems>
       </Box>
     </Flex>
   );

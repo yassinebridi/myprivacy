@@ -1,44 +1,47 @@
 import React from "react";
 import { Box, Heading, Flex, Text, Button, Link, Image } from "@chakra-ui/core";
+import Header from "./Header";
 
 const Hero = props => {
   return (
-    <Flex
-      // align="center"
-      // justify="space-between"
-      // wrap="wrap"
+    <Box
       padding="1.5rem 4rem"
-      background="rgb(2,0,36)"
-      background="linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(95,68,139,1) 49%, rgba(19,29,31,1) 100%)"
-      color="white"
-      {...props}
+      color="gray.600"
+      backgroundColor="#000000"
+      backgroundImage="url('https://res.cloudinary.com/gokoura/image/upload/v1582910387/Endless-Constellation_1_t97cdd.svg')"
+      backgroundAttachment="fixed"
+      h={500}
     >
-      <Box p={2} display={{ md: "flex" }}>
-        <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }} width={{ md: "40%" }}>
-          <Heading
-            mt={1}
-            size="lg"
-            as="h1"
-            lineHeight="normal"
-            fontWeight="bold"
-          >
-            Finding customers for your new business
+      <Header></Header>
+      <Box display={{ md: "flex" }} textAlign="center" pt={10}>
+        <Box width="100%" py={10}>
+          <Heading size="xs" as="h3">
+            JAMSTACK DEVELOPERS FOR HIRE
           </Heading>
-          <Text mt={2} color="gray.200">
-            Getting a new business off the ground is a lot of hard work. Here
-            are five ideas you can use to find your first customers.
+          <Heading
+            size="2xl"
+            as="h1"
+            lineHeight="2.7"
+            fontWeight="bold"
+            fontFamily="Libre Baskerville"
+          >
+            Meet faster, more secure web.
+          </Heading>
+          <Text color="gray.600" fontSize="xl" fontWeight="light">
+            Let us maximize your business potential <br></br> with the latest
+            and innovative technologies.
           </Text>
-        </Box>
-        <Box flexShrink="0">
-          <Image
-            rounded="lg"
-            width={{ md: 500 }}
-            src="https://bit.ly/2jYM25F"
-            alt="Woman paying for a purchase"
-          />
+          <Button
+            variantColor="purple"
+            size="lg"
+            mt={8}
+            backgroundColor="purple.800"
+          >
+            Talk to us
+          </Button>
         </Box>
       </Box>
-    </Flex>
+    </Box>
   );
 };
 
