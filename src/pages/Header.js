@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "gatsby";
 import { Box, Heading, Flex, Text, Button } from "@chakra-ui/core";
-import slugify from "slugify";
+import urlSlug from "url-slug";
 
 const MenuItems = ({ children }) => (
-  <Link to={`/${slugify(children)}`}>
+  <Link to={`/${urlSlug(children)}`}>
     <Text mt={{ base: 4, md: 0 }} px={3} display="block">
       {children}
     </Text>

@@ -15,9 +15,6 @@ const Hero = props => {
       <Header></Header>
       <Box display={{ md: "flex" }} textAlign="center" pt={10}>
         <Box width="100%" py={10}>
-          <Heading size="xs" as="h3">
-            JAMSTACK DEVELOPERS FOR HIRE
-          </Heading>
           <Heading
             size="2xl"
             as="h1"
@@ -25,18 +22,13 @@ const Hero = props => {
             fontWeight="bold"
             fontFamily="Libre Baskerville"
           >
-            Meet faster, more secure web.
+            Meet smarter, more secure safes.
           </Heading>
           <Text color="gray.600" fontSize="xl" fontWeight="light">
-            Let us maximize your business potential <br></br> with the latest
-            and innovative technologies.
+            Let us maximize your business safety <br></br> with cuting edge
+            Facial Recognition powered safe locks.
           </Text>
-          <Button
-            variantColor="purple"
-            size="lg"
-            mt={8}
-            backgroundColor="purple.800"
-          >
+          <Button variantColor="red" size="lg" mt={8}>
             Talk to us
           </Button>
         </Box>
