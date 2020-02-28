@@ -51,6 +51,7 @@ const Header = props => {
         flexGrow={1}
         justifyContent="flex-end"
       >
+        <MenuItems>Home</MenuItems>
         <MenuItems>About</MenuItems>
         <MenuItems>Blog</MenuItems>
         <MenuItems>Contact us</MenuItems>
