@@ -2,13 +2,21 @@ import React from "react";
 import { Link } from "gatsby";
 import { Box, Heading, Flex, Text, Button } from "@chakra-ui/core";
 import urlSlug from "url-slug";
+import styled from "styled-components";
+
+const StyledLink = styled(Link)`
+  display: block;
+  padding: 0 20px;
+  font-weight: 600;
+  &:hover {
+    color: #e53e3e;
+  }
+`;
 
 const MenuItems = ({ children }) => (
-  <Link to={`/${urlSlug(children)}`}>
-    <Text mt={{ base: 4, md: 0 }} px={3} display="block">
-      {children}
-    </Text>
-  </Link>
+  <StyledLink to={`/${urlSlug(children)}`} mt={{ base: 4, md: 0 }}>
+    <Text>{children}</Text>
+  </StyledLink>
 );
 
 const Header = props => {
