@@ -13,7 +13,7 @@ const Benefits = () => {
     >
       <Text fontSize="sm">PRODUCT WITH BENEFITS</Text>
       <Heading as="h1" fontFamily="Libre Baskerville" size="lg" py={5}>
-        Why you should use Soley?
+        Why should you use Soley?
       </Heading>
       <Text fontSize="md" color="gray.600" fontWeight="medium">
         We use the power of Artifitial intelligence <br></br>to make our
