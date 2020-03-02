@@ -62,7 +62,7 @@ const Testimony = () => {
         </Flex>
         <Box flexGrow={1} flexBasis={0} ml={15} mt={55}>
           <Image
-            src="https://res.cloudinary.com/gokoura/image/upload/v1583021907/58246_Converted_oeqg1j.svg"
+            src="https://res.cloudinary.com/gokoura/image/upload/v1583114338/1041_Converted_iafqmf.svg"
             alt="lock"
             width="100%"
           ></Image>
