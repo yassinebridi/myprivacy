@@ -11,7 +11,7 @@ import {
   Avatar
 } from "@chakra-ui/core";
 
-const Footer = () => {
+const Testimony = () => {
   return (
     <Box
       padding="2rem 4rem"
@@ -37,9 +37,9 @@ const Footer = () => {
             Having worked intensively with Soley on multiple projects, our
             partnership has been a professional and productive experience with
             impressive results to date. The team is responsive, full of ideas
-            and delivers on their commitments. I can highly recommend Soley as
-            a serious partner in modern Security involving
-            AI and Face Deteciton technologies.
+            and delivers on their commitments. I can highly recommend Soley as a
+            serious partner in modern Security involving AI and Face Deteciton
+            technologies.
           </Text>
           <Stack isInline my={10}>
             <Icon name="star" size="20px" color="yellow.400" />
@@ -72,4 +72,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Testimony;
