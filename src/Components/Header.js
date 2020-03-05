@@ -13,8 +13,8 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const MenuItems = ({ children }) => (
-  <StyledLink to={`/${urlSlug(children)}`} mt={{ base: 4, md: 0 }}>
+const MenuItems = ({ children, slug }) => (
+  <StyledLink to={slug} mt={{ base: 4, md: 0 }}>
     <Text>{children}</Text>
   </StyledLink>
 );
@@ -29,7 +29,7 @@ const Header = props => {
       align="center"
       justify="space-between"
       wrap="wrap"
-      padding="0 0 2rem 0"
+      padding="1.5rem 4rem 2rem 4rem"
       {...props}
     >
       <Flex align="center" mr={5}>
@@ -59,10 +59,10 @@ const Header = props => {
         flexGrow={1}
         justifyContent="flex-end"
       >
-        <MenuItems>Home</MenuItems>
-        <MenuItems>About</MenuItems>
-        <MenuItems>Blog</MenuItems>
-        <MenuItems>Contact us</MenuItems>
+        <MenuItems slug="/">Home</MenuItems>
+        <MenuItems slug="/about">About</MenuItems>
+        <MenuItems slug="/blog">Blog</MenuItems>
+        <MenuItems slug="/contact">Contact us</MenuItems>
       </Box>
     </Flex>
   );

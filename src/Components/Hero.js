@@ -5,7 +5,7 @@ import Header from "./Header";
 const Hero = props => {
   return (
     <Box
-      padding="1.5rem 4rem"
+      padding="0 0 1.5rem 0"
       color="gray.600"
       backgroundColor="#000000"
       backgroundImage="url('https://res.cloudinary.com/gokoura/image/upload/v1582910387/Endless-Constellation_1_t97cdd.svg')"

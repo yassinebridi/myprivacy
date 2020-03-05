@@ -1,0 +1,145 @@
+import { useForm } from "react-hook-form";
+import React, { useState } from "react";
+import {
+  FormErrorMessage,
+  FormLabel,
+  FormControl,
+  Input,
+  Button,
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Link,
+  Textarea
+} from "@chakra-ui/core";
+
+export default function HookForm() {
+  const { handleSubmit, errors, register, formState } = useForm();
+
+  function validateEmail(value) {
+    let error;
+    if (!value) {
+      error = "Email is required";
+    } else if (
+      !/^[a-z0-9\_\.\-]{2,20}\@[a-z0-9\_\-]{2,20}\.[a-z]{2,9}$/.test(value)
+    ) {
+      error = "Check if your email is written correclty!";
+    }
+    return error || true;
+  }
+
+  function validateMessage(value) {
+    let error;
+    if (!value) {
+      error = "Message is required";
+    }
+    return error || true;
+  }
+
+  function onSubmit(values) {
+    console.log(values);
+  }
+
+  return (
+    <Flex my={20}>
+      <Box flexGrow={1} flexBasis={0} mr={15}>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <FormControl isInvalid={errors.email} mb={8}>
+            <Input
+              name="email"
+              placeholder="Your Email"
+              ref={register({ validate: validateEmail })}
+              size="lg"
+              variant="filled"
+            />
+            <FormErrorMessage>
+              {errors.email && errors.email.message}
+            </FormErrorMessage>
+          </FormControl>
+          <FormControl isInvalid={errors.message} my={8}>
+            <Textarea
+              name="message"
+              placeholder="Your Message"
+              height="222px"
+              ref={register({ validate: validateMessage })}
+              size="lg"
+              variant="filled"
+            />
+            <FormErrorMessage>
+              {errors.message && errors.message.message}
+            </FormErrorMessage>
+          </FormControl>
+          <Button
+            variantColor="red"
+            size="lg"
+            isLoading={formState.isSubmitting}
+            type="submit"
+          >
+            Send
+          </Button>
+        </form>
+      </Box>
+      <Box
+        flexGrow={1}
+        flexBasis={0}
+        ml={15}
+        display="flex"
+        flexDirection="column"
+      >
+        <Text
+          as="h1"
+          fontSize="5xl"
+          fontWeight="bolder"
+          letterSpacing={"-.1rem"}
+          mb={4}
+          textAlign="right"
+        >
+          LOGO
+        </Text>
+        <Text
+          as="h1"
+          fontSize="2xl"
+          fontWeight="medium"
+          letterSpacing={"-.1rem"}
+          borderBottom="4px solid"
+          mb={4}
+        >
+          Soley Solutions
+        </Text>
+        <Link
+          fontSize="2xl"
+          fontWeight="normal"
+          letterSpacing={"-.1rem"}
+          borderBottom="3px solid"
+          href="mailto:support@soley.tech"
+          isExternal
+          mb={4}
+        >
+          support@soley.tech
+        </Link>
+        <Link
+          fontSize="2xl"
+          fontWeight="normal"
+          letterSpacing={"-.1rem"}
+          borderBottom="3px solid"
+          href="tel:+212614630080"
+          isExternal
+          mb={4}
+        >
+          +212 614-630080
+        </Link>
+        <Link
+          fontSize="2xl"
+          fontWeight="normal"
+          letterSpacing={"-.1rem"}
+          borderBottom="3px solid"
+          href="https://goo.gl/maps/drCd11dvGoeoto7z5"
+          isExternal
+        >
+          Ancienne Route de l’Aéroport, Km 10, Ziaten. BP : 416.
+        </Link>
+      </Box>
+    </Flex>
+  );
+}
