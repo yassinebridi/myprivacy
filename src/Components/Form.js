@@ -11,13 +11,16 @@ import {
   Heading,
   Text,
   Link,
-  Textarea
+  Textarea,
+  Alert,
+  AlertIcon,
+  AlertTitle,
+  AlertDescription
 } from "@chakra-ui/core";
 import addToMailchimp from "gatsby-plugin-mailchimp";
 
 export default function HookForm() {
   const { handleSubmit, errors, register, formState } = useForm();
-  const [subMessage, setSubMessage] = React.useState("");
   const [err, setErr] = React.useState("");
 
   function validateEmail(value) {
@@ -54,13 +57,10 @@ export default function HookForm() {
       MSG: values.message
     });
     if (result.result === "error") {
-      setSubMessage("There seems to be a problem, try again!");
       setErr(true);
     } else if (result.result === "success") {
       setErr(false);
-      setSubMessage("Thanks for contacting us, we will be in touch soon!");
     }
-    console.log(result.msg);
   }
   return (
     <Flex my={20}>
@@ -112,26 +112,19 @@ export default function HookForm() {
             Send
           </Button>
         </form>
-        <Box>
-          <Text
-            fontWeight="medium"
-            fontSize="lg"
-            color={err === true ? "red.500" : "green.500"}
-            bg={err === true ? "red.100" : err === false ? "green.100" : null}
-            border={
-              err === true
-                ? "1px solid #f7b3b3"
-                : err === false
-                ? "1px solid #6bd08b"
-                : null
-            }
-            borderRadius={err === true ? "5px" : err === false ? "5px" : null}
-            my={err === true ? 4 : err === false ? 4 : null}
-            p={err === true ? 2 : err === false ? 2 : null}
-          >
-            {subMessage && subMessage}
-          </Text>
-        </Box>
+
+        {err === true && (
+          <Alert status="error" variant="left-accent" mt={8}>
+            <AlertIcon />
+            There seems to be a problem, try again!
+          </Alert>
+        )}
+        {err === false && (
+          <Alert status="success" variant="left-accent" mt={8}>
+            <AlertIcon />
+            Thanks for contacting us, we will be in touch soon!
+          </Alert>
+        )}
       </Box>
       <Box
         flexGrow={1}
