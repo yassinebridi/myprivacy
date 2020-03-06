@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Heading, Flex, Text, Button, Link, Image } from "@chakra-ui/core";
+import { Box, Heading, Flex, Text, Button, Image } from "@chakra-ui/core";
 import Header from "./Header";
+import { Link } from "gatsby";
 
 const Hero = props => {
   return (
@@ -34,9 +35,11 @@ const Hero = props => {
             Let us maximize your business safety <br></br> with cuting edge
             Facial Recognition powered safe locks.
           </Text>
-          <Button variantColor="red" size="lg">
-            Talk to us
-          </Button>
+          <Link to="contact">
+            <Button variantColor="red" size="lg">
+              Talk to us
+            </Button>
+          </Link>
         </Box>
       </Box>
     </Box>

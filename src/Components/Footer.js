@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Heading, Flex, Text, Button, Divider } from "@chakra-ui/core";
+import { Link } from "gatsby";
 
 const Testimony = () => {
   return (
@@ -22,9 +23,11 @@ const Testimony = () => {
           Start your super-secure business life with Soley.
         </Text>
       </Box>
-      <Button variantColor="red" size="lg" my={2}>
-        Talk to us
-      </Button>
+      <Link to="contact">
+        <Button variantColor="red" size="lg" my={2}>
+          Talk to us
+        </Button>
+      </Link>
       <Divider borderColor="gray.800" my={10} />
       <Text textAlign="left" color="gray.400">
         © Soley.tech - All rights reserved.
