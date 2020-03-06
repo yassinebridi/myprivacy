@@ -30,6 +30,7 @@ const Header = props => {
       justify="space-between"
       wrap="wrap"
       padding="1.5rem 4rem 2rem 4rem"
+      color="gray.600"
       {...props}
     >
       <Flex align="center" mr={5}>
