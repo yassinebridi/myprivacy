@@ -13,9 +13,12 @@ import {
   Link,
   Textarea
 } from "@chakra-ui/core";
+import addToMailchimp from "gatsby-plugin-mailchimp";
 
 export default function HookForm() {
   const { handleSubmit, errors, register, formState } = useForm();
+  const [subMessage, setSubMessage] = React.useState("");
+  const [err, setErr] = React.useState("");
 
   function validateEmail(value) {
     let error;
@@ -37,10 +40,28 @@ export default function HookForm() {
     return error || true;
   }
 
-  function onSubmit(values) {
-    console.log(values);
+  function validateName(value) {
+    let error;
+    if (!value) {
+      error = "Name is required";
+    }
+    return error || true;
   }
 
+  async function onSubmit(values) {
+    const result = await addToMailchimp(values.email, {
+      NAME: values.name,
+      MSG: values.message
+    });
+    if (result.result === "error") {
+      setSubMessage("There seems to be a problem, try again!");
+      setErr(true);
+    } else if (result.result === "success") {
+      setErr(false);
+      setSubMessage("Thanks for contacting us, we will be in touch soon!");
+    }
+    console.log(result.msg);
+  }
   return (
     <Flex my={20}>
       <Box flexGrow={1} flexBasis={0} mr={15}>
@@ -55,6 +76,18 @@ export default function HookForm() {
             />
             <FormErrorMessage>
               {errors.email && errors.email.message}
+            </FormErrorMessage>
+          </FormControl>
+          <FormControl isInvalid={errors.name} my={8}>
+            <Input
+              name="name"
+              placeholder="Your Name"
+              ref={register({ validate: validateName })}
+              size="lg"
+              variant="filled"
+            />
+            <FormErrorMessage>
+              {errors.name && errors.name.message}
             </FormErrorMessage>
           </FormControl>
           <FormControl isInvalid={errors.message} my={8}>
@@ -79,6 +112,26 @@ export default function HookForm() {
             Send
           </Button>
         </form>
+        <Box>
+          <Text
+            fontWeight="medium"
+            fontSize="lg"
+            color={err === true ? "red.500" : "green.500"}
+            bg={err === true ? "red.100" : err === false ? "green.100" : null}
+            border={
+              err === true
+                ? "1px solid #f7b3b3"
+                : err === false
+                ? "1px solid #6bd08b"
+                : null
+            }
+            borderRadius={err === true ? "5px" : err === false ? "5px" : null}
+            my={err === true ? 4 : err === false ? 4 : null}
+            p={err === true ? 2 : err === false ? 2 : null}
+          >
+            {subMessage && subMessage}
+          </Text>
+        </Box>
       </Box>
       <Box
         flexGrow={1}
