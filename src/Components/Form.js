@@ -20,7 +20,7 @@ import {
 import addToMailchimp from "gatsby-plugin-mailchimp";
 
 export default function HookForm() {
-  const { handleSubmit, errors, register, formState } = useForm();
+  const { handleSubmit, errors, register, formState, reset } = useForm();
   const [err, setErr] = React.useState("");
 
   function validateEmail(value) {
@@ -60,6 +60,7 @@ export default function HookForm() {
       setErr(true);
     } else if (result.result === "success") {
       setErr(false);
+      reset();
     }
   }
   return (
