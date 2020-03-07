@@ -60,9 +60,7 @@ const Talk = () => {
           </Box>
         </Flex>
       </Box>
-      {/* <Box px={40} py={4}>
-        <Form></Form>
-      </Box> */}
+      <Form></Form>
     </>
   );
 };

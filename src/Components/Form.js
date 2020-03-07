@@ -11,6 +11,7 @@ import {
   Heading,
   Text,
   Link,
+  Grid,
   Textarea,
   Alert,
   AlertIcon,
@@ -64,7 +65,12 @@ export default function HookForm() {
     }
   }
   return (
-    <Flex my={20}>
+    <Grid
+      templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
+      gap={[0, 0, 0, 8]}
+      px={{ xs: 8, sm: 12, md: 12, lg: 32 }}
+      py={{ xs: 12, sm: 8, md: 8, lg: 10 }}
+    >
       <Box flexGrow={1} flexBasis={0} mr={15}>
         <form onSubmit={handleSubmit(onSubmit)}>
           <FormControl isInvalid={errors.email} mb={8}>
@@ -141,12 +147,13 @@ export default function HookForm() {
           letterSpacing={"-.1rem"}
           mb={4}
           textAlign="right"
+          display={["none", "none", "block", "block"]}
         >
           LOGO
         </Text>
         <Text
           as="h1"
-          fontSize="2xl"
+          fontSize={["md", "lg", "xl", "2xl"]}
           fontWeight="medium"
           letterSpacing={"-.1rem"}
           borderBottom="4px solid"
@@ -155,7 +162,7 @@ export default function HookForm() {
           Soley Solutions
         </Text>
         <Link
-          fontSize="2xl"
+          fontSize={["md", "lg", "xl", "2xl"]}
           fontWeight="normal"
           letterSpacing={"-.1rem"}
           borderBottom="3px solid"
@@ -166,7 +173,7 @@ export default function HookForm() {
           support@soley.tech
         </Link>
         <Link
-          fontSize="2xl"
+          fontSize={["md", "lg", "xl", "2xl"]}
           fontWeight="normal"
           letterSpacing={"-.1rem"}
           borderBottom="3px solid"
@@ -177,7 +184,7 @@ export default function HookForm() {
           +212 614-630080
         </Link>
         <Link
-          fontSize="2xl"
+          fontSize={["md", "lg", "xl", "2xl"]}
           fontWeight="normal"
           letterSpacing={"-.1rem"}
           borderBottom="3px solid"
@@ -187,6 +194,6 @@ export default function HookForm() {
           Ancienne Route de l’Aéroport, Km 10, Ziaten. BP : 416.
         </Link>
       </Box>
-    </Flex>
+    </Grid>
   );
 }
