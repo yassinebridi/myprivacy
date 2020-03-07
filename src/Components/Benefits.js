@@ -1,29 +1,30 @@
 import React from "react";
-import {
-  Box,
-  Heading,
-  Flex,
-  Text,
-  Button,
-  Image,
-  Stack
-} from "@chakra-ui/core";
+import { Box, Heading, Flex, Text, Button, Image, Grid } from "@chakra-ui/core";
 
 const Feature = ({ image, title, desc }) => {
   return (
-    <Box flexGrow={1} flexBasis={0} mx={3}>
+    <Box
+      mx={{ sm: 6, md: 2, xl: 3 }}
+      display={{ sm: "flex", md: "block", lg: "block" }}
+      alignItems={{ sm: "center", md: null, lg: null }}
+    >
       <Image
         src={image}
         alt="lock"
         size="120px"
         margin="0 auto 10px auto"
       ></Image>
-      <Text fontSize="xl" fontWeight="bold" pb="2">
-        {title}
-      </Text>
-      <Text fontWeight="light" fontSize="lg">
-        {desc}
-      </Text>
+      <Box
+        textAlign={{ sm: "left", md: "center", lg: "center" }}
+        ml={{ sm: 6, md: 0, lg: 0 }}
+      >
+        <Text fontSize={["sm", "md", "lg", "xl"]} fontWeight="bold" pb="2">
+          {title}
+        </Text>
+        <Text fontWeight="light" fontSize={["xs", "sm", "md", "lg"]}>
+          {desc}
+        </Text>
+      </Box>
     </Box>
   );
 };
@@ -31,23 +32,39 @@ const Feature = ({ image, title, desc }) => {
 const Benefits = () => {
   return (
     <Box
-      padding="2rem 4rem"
-      margin="1.5rem 4rem"
+      px={{ xl: 16, lg: 0 }}
+      py={8}
+      mx={{ md: 0, xl: 16, lg: 8 }}
+      my={{ md: 0, xl: 6, lg: 4 }}
       borderRadius={20}
       textAlign="center"
       bg="#fafafa"
       color="gray.600"
     >
-      <Text fontSize="sm">PRODUCT WITH BENEFITS</Text>
-      <Heading as="h1" fontFamily="Libre Baskerville" size="lg" py={5}>
+      <Text fontSize={["xs", "xs", "xs", "sm"]}>PRODUCT WITH BENEFITS</Text>
+      <Heading
+        as="h1"
+        fontFamily="Libre Baskerville"
+        fontSize={["md", "lg", "xl", "2xl"]}
+        py={5}
+      >
         Why should you use Soley?
       </Heading>
-      <Text fontSize="md" color="gray.600" fontWeight="medium">
+      <Text
+        fontSize={["xs", "xs", "sm", "md"]}
+        color="gray.600"
+        fontWeight="medium"
+      >
         We use the power of Artifitial intelligence <br></br>to make our
         customers's life easier and safer.
       </Text>
 
-      <Stack isInline spacing={8} py={10} align="start">
+      <Grid
+        templateColumns={{ sm: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}
+        gap={10}
+        px={{ xs: 8, sm: 12, md: 12 }}
+        py={{ xs: 12, sm: 8, md: 8 }}
+      >
         <Feature
           title="Secure"
           desc="Soley is very secure as there is simply no access to the lock –
@@ -72,7 +89,7 @@ const Benefits = () => {
             key again."
           image="https://res.cloudinary.com/gokoura/image/upload/v1582938129/key_pkmkfx.svg"
         />
-      </Stack>
+      </Grid>
     </Box>
   );
 };
