@@ -48,6 +48,10 @@ const Header = props => {
       justify="space-between"
       wrap="wrap"
       padding="1.5rem 4rem 2rem 4rem"
+      pt={6}
+      pr={{ xs: 6, sm: 8, md: 8, lg: 16 }}
+      pb={{ xs: 2, sm: 6, md: 8, lg: 8 }}
+      pl={{ xs: 6, sm: 8, md: 8, lg: 16 }}
       color="gray.600"
       {...props}
     >
@@ -89,7 +93,7 @@ const Header = props => {
           sm: show ? "block" : "none",
           md: "none"
         }}
-        zIndex={1}
+        zIndex="overlay"
         px={8}
         py={10}
         alignItems="center"
