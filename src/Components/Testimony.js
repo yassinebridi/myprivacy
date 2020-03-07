@@ -14,25 +14,40 @@ import {
 const Testimony = () => {
   return (
     <Box
-      padding="2rem 4rem"
-      margin="1.5rem 4rem"
+      // padding="2rem 4rem"
+      // margin="1.5rem 4rem"
       borderRadius={20}
       textAlign="center"
       color="gray.600"
+      px={{ xl: 16, lg: 0 }}
+      py={8}
+      mx={{ md: 0, xl: 16, lg: 8 }}
+      my={{ md: 0, xl: 6, lg: 4 }}
     >
       <Box>
-        <Text fontSize="sm">LOVED BY CUSTOMERS</Text>
-        <Heading as="h1" fontFamily="Libre Baskerville" size="lg" py={5}>
+        <Text fontSize={["xs", "xs", "xs", "sm"]}>LOVED BY CUSTOMERS</Text>
+        <Heading
+          as="h1"
+          fontFamily="Libre Baskerville"
+          fontSize={["md", "lg", "xl", "2xl"]}
+          py={5}
+        >
           Why do people Love us?
         </Heading>
       </Box>
-      <Flex py={10} align="start">
-        <Flex flexGrow={1} flexBasis={0} mr={15} flexDirection="column">
+      <Flex py={[4, 6, 8, 10]} align="start">
+        <Flex
+          flexGrow={1}
+          flexBasis={0}
+          mr={[0, 0, 0, 15]}
+          flexDirection="column"
+        >
           <Text
             fontWeight="extrabold"
-            fontSize="2xl"
+            fontSize={["md", "lg", "xl", "2xl"]}
             fontFamily="Libre Baskerville"
             textAlign="left"
+            px={[12, 20, 32, 0]}
           >
             Having worked intensively with Soley on multiple projects, our
             partnership has been a professional and productive experience with
@@ -41,14 +56,22 @@ const Testimony = () => {
             serious partner in modern Security involving AI and Face Deteciton
             technologies.
           </Text>
-          <Stack isInline my={10}>
+          <Stack
+            isInline
+            my={[4, 6, 8, 10]}
+            pt={[6, 6, 0, 0]}
+            justifyContent={["center", "center", "center", "flex-start"]}
+          >
             <Icon name="star" size="20px" color="yellow.400" />
             <Icon name="star" size="20px" color="yellow.400" />
             <Icon name="star" size="20px" color="yellow.400" />
             <Icon name="star" size="20px" color="yellow.400" />
             <Icon name="star" size="20px" color="yellow.400" />
           </Stack>
-          <Flex>
+          <Flex
+            px={[4, 6, 8, 0]}
+            justifyContent={["center", "center", "center", "flex-start"]}
+          >
             <Avatar
               name="Segun Adebayo"
               src="https://bit.ly/sage-adebayo"
@@ -60,7 +83,13 @@ const Testimony = () => {
             </Box>
           </Flex>
         </Flex>
-        <Box flexGrow={1} flexBasis={0} ml={15} mt={55}>
+        <Box
+          flexGrow={1}
+          flexBasis={0}
+          ml={15}
+          mt={55}
+          display={{ xs: "none", sm: "none", md: "none", lg: "block" }}
+        >
           <Image
             src="https://res.cloudinary.com/gokoura/image/upload/v1583114338/1041_Converted_iafqmf.svg"
             alt="lock"
