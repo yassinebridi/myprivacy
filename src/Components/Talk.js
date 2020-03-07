@@ -20,8 +20,21 @@ const Talk = () => {
         pt={[8]}
         pb={[8, 8, 0, 0]}
         textAlign="center"
-        color="gray.600"
-        bg="#fff1f1"
+        color={["white", "white", "gray.600", "gray.600"]}
+        background={[
+          "rgba(210, 26, 26, 0.5)",
+          "rgba(210, 26, 26, 0.5)",
+          "rgb(255, 241, 241)",
+          "rgb(255, 241, 241)"
+        ]}
+        backgroundImage={[
+          "url('https://res.cloudinary.com/gokoura/image/upload/v1583368466/talk_umxoyw.svg')",
+          "url('https://res.cloudinary.com/gokoura/image/upload/v1583368466/talk_umxoyw.svg')",
+          "none",
+          "none"
+        ]}
+        backgroundAttachment={["fixed", "fixed", "none", "none"]}
+        textShadow="2px 2px 5px rgba(0,0,0,0.26)"
       >
         <Flex align="center">
           <Box
