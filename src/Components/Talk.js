@@ -16,27 +16,41 @@ const Talk = () => {
   return (
     <>
       <Box
-        padding="2rem 4rem 0 4rem"
+        px={[4, 16, 8, 16]}
+        pt={[8]}
+        pb={[8, 8, 0, 0]}
         textAlign="center"
         color="gray.600"
         bg="#fff1f1"
       >
         <Flex align="center">
-          <Box flexGrow={1} flexBasis={0} mr={15} textAlign="left">
+          <Box
+            flexGrow={1}
+            flexBasis={0}
+            mr={15}
+            textAlign="left"
+            display="flex"
+            flexDirection="column"
+          >
             <Text
               fontFamily="Libre Baskerville"
-              fontSize="4xl"
+              fontSize={["1xl", "2xl", "4xl", "5xl"]}
               fontWeight="bold"
-              mb={16}
+              mb={[1, 2, 3, 4]}
             >
               Let's Talk
             </Text>
-            <Text fontSize="2xl" mt={16}>
+            <Text fontSize={["xs", "sm", "lg", "xl"]} mt={[1, 2, 3, 4]}>
               Tell us about your project, get a quick estimate and a plan for
               making it live.
             </Text>
           </Box>
-          <Box flexGrow={1} flexBasis={0} ml={15}>
+          <Box
+            flexGrow={1}
+            flexBasis={0}
+            ml={15}
+            display={["none", "none", "block", "block"]}
+          >
             <Image
               transform="scaleX(-1)"
               src="https://res.cloudinary.com/gokoura/image/upload/v1583368466/talk_umxoyw.svg"
@@ -46,9 +60,9 @@ const Talk = () => {
           </Box>
         </Flex>
       </Box>
-      <Box px={40} py={4}>
+      {/* <Box px={40} py={4}>
         <Form></Form>
-      </Box>
+      </Box> */}
     </>
   );
 };
