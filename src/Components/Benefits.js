@@ -18,10 +18,10 @@ const Feature = ({ image, title, desc }) => {
         textAlign={{ sm: "left", md: "center", lg: "center" }}
         ml={{ sm: 6, md: 0, lg: 0 }}
       >
-        <Text fontSize={["sm", "md", "lg", "xl"]} fontWeight="bold" pb="2">
+        <Text fontSize={["md", "md", "lg", "xl"]} fontWeight="bold" pb="2">
           {title}
         </Text>
-        <Text fontWeight="light" fontSize={["xs", "sm", "md", "lg"]}>
+        <Text fontWeight="light" fontSize={["sm", "sm", "md", "lg"]}>
           {desc}
         </Text>
       </Box>

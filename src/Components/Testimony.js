@@ -71,15 +71,22 @@ const Testimony = () => {
           <Flex
             px={[4, 6, 8, 0]}
             justifyContent={["center", "center", "center", "flex-start"]}
+            alignItems="center"
           >
             <Avatar
               name="Segun Adebayo"
               src="https://bit.ly/sage-adebayo"
               mr={4}
+              width={["32px", "32px", "48px", "48px"]}
+              height={["32px", "32px", "48px", "48px"]}
             />
             <Box textAlign="left">
-              <Text fontWeight="bold">Segun Adebayo</Text>
-              <Text fontWeight="medium">Maker and maintainer of ChakraUI</Text>
+              <Text fontWeight="bold" fontSize={["sm", "sm", "md", "md"]}>
+                Segun Adebayo
+              </Text>
+              <Text fontWeight="medium" fontSize={["xs", "xs", "sm", "sm"]}>
+                Maker and maintainer of ChakraUI
+              </Text>
             </Box>
           </Flex>
         </Flex>

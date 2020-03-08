@@ -11,8 +11,8 @@ const Overlay = styled(Box)`
   height: 100%;
   top: 0;
   left: 0;
-  background: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(3px);
 `;
 
 const StyledLink = styled(Link)`
@@ -84,7 +84,6 @@ const Header = props => {
       >
         <MenuItems slug="/">Home</MenuItems>
         <MenuItems slug="/about">About</MenuItems>
-        <MenuItems slug="/blog">Blog</MenuItems>
         <MenuItems slug="/contact">Contact us</MenuItems>
       </Box>
       <Overlay
@@ -100,15 +99,12 @@ const Header = props => {
         flexGrow={1}
         justifyContent="flex-end"
       >
-        <Box mb={8}>
+        <Box mb={8} py={24}>
           <MenuItems mobile slug="/">
             Home
           </MenuItems>
           <MenuItems mobile slug="/about">
             About
-          </MenuItems>
-          <MenuItems mobile slug="/blog">
-            Blog
           </MenuItems>
           <MenuItems mobile slug="/contact">
             Contact us

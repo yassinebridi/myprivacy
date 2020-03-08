@@ -25,15 +25,15 @@ const Hero = props => {
           </Heading>
           <Text
             color="gray.600"
-            fontSize={["xs", "sm", "lg", "xl"]}
+            fontSize={["sm", "sm", "lg", "xl"]}
             fontWeight="light"
-            py="10"
+            py={[4, 6, 8, 10]}
           >
             Let us maximize your business safety <br></br> with cuting edge
             Facial Recognition powered safe locks.
           </Text>
           <Link to="contact">
-            <Button variantColor="red" size="lg">
+            <Button variantColor="red" size="lg" my={[4, 2, 2, 2]}>
               Talk to us
             </Button>
           </Link>

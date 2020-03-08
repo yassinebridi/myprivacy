@@ -136,7 +136,8 @@ export default function HookForm() {
       <Box
         flexGrow={1}
         flexBasis={0}
-        ml={15}
+        ml={[0, 0, 8, 8]}
+        my={[10, 10, 0, 0]}
         display="flex"
         flexDirection="column"
       >
