@@ -1,6 +1,14 @@
 const path = require(`path`);
 
 module.exports = {
+  siteMetadata: {
+    title: "MyPrivacy",
+    titleTemplate: "%s | MyPrivacy, smarter, more secure safe lock",
+    description:
+      "MyPrivacy, the one and the only solution you need, to maximize the security of your locks.",
+    url: "https://my-privacy.tech",
+    image: "/images/imageSEO.png"
+  },
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
