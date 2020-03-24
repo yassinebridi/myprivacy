@@ -1,6 +1,15 @@
 import React from "react";
-import { Box, Heading, Flex, Text, Button, Divider } from "@chakra-ui/core";
-import { Link } from "gatsby";
+import {
+  Box,
+  Heading,
+  Flex,
+  Text,
+  Button,
+  Divider,
+  Link
+} from "@chakra-ui/core";
+import { Link as LinkGatsby } from "gatsby";
+import { GoMarkGithub } from "react-icons/go";
 
 const Testimony = () => {
   return (
@@ -31,29 +40,43 @@ const Testimony = () => {
           fontSize={["md", "lg", "xl", "2xl"]}
           py={5}
         >
-          Ready to try out Soley?
+          Ready to try out MyPrivacy?
         </Heading>
         <Text
           color="gray.500"
           fontSize={["xs", "sm", "md", "lg"]}
           fontWeight="medium"
         >
-          Start your super-secure business life with Soley.
+          Start your super-secure business life with MyPrivacy.
         </Text>
       </Box>
-      <Link to="contact">
+      <LinkGatsby to="contact">
         <Button variantColor="red" size="lg" my={2}>
           Talk to us
         </Button>
-      </Link>
+      </LinkGatsby>
       <Divider borderColor="gray.800" my={10} />
-      <Text
-        textAlign="left"
-        color="gray.400"
-        fontSize={["xs", "xs", "xs", "sm"]}
-      >
-        © Soley.tech - All rights reserved.
-      </Text>
+      <Box display="flex" justifyContent="space-between">
+        <Text
+          textAlign="left"
+          color="gray.400"
+          fontSize={["xs", "xs", "xs", "sm"]}
+        >
+          © MyPrivacy.tech - All rights reserved.
+        </Text>
+        <Box display="flex" alignItems="center">
+          <Box as={GoMarkGithub} size="20px" color="gray.400" mr={1} />
+          <Link
+            isExternal
+            href="https://github.com/yassinebridi/soley"
+            textAlign="left"
+            color="gray.400"
+            fontSize={["xs", "xs", "xs", "sm"]}
+          >
+            Github
+          </Link>
+        </Box>
+      </Box>
     </Box>
   );
 };

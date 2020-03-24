@@ -11,6 +11,7 @@ import {
   Avatar
 } from "@chakra-ui/core";
 import Form from "./Form";
+import talk from "../images/talk.svg";
 
 const Talk = () => {
   return (
@@ -27,12 +28,7 @@ const Talk = () => {
           "rgb(255, 241, 241)",
           "rgb(255, 241, 241)"
         ]}
-        backgroundImage={[
-          "url('https://res.cloudinary.com/gokoura/image/upload/v1583368466/talk_umxoyw.svg')",
-          "url('https://res.cloudinary.com/gokoura/image/upload/v1583368466/talk_umxoyw.svg')",
-          "none",
-          "none"
-        ]}
+        backgroundImage={[`url(${talk})`, `url(${talk})`, "none", "none"]}
         backgroundAttachment={["fixed", "fixed", "none", "none"]}
         textShadow="2px 2px 5px rgba(0,0,0,0.26)"
       >
@@ -66,7 +62,7 @@ const Talk = () => {
           >
             <Image
               transform="scaleX(-1)"
-              src="https://res.cloudinary.com/gokoura/image/upload/v1583368466/talk_umxoyw.svg"
+              src={talk}
               alt="person talking"
               width="100%"
             ></Image>

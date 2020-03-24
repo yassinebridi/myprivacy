@@ -58,7 +58,7 @@ const Header = props => {
       <Flex align="center" mr={5}>
         <Link to="/">
           <Heading as="h1" size="lg" letterSpacing={"-.1rem"}>
-            Soley Solutions
+            MyPrivacy
           </Heading>
         </Link>
       </Flex>
@@ -83,7 +83,6 @@ const Header = props => {
         justifyContent="flex-end"
       >
         <MenuItems slug="/">Home</MenuItems>
-        <MenuItems slug="/about">About</MenuItems>
         <MenuItems slug="/contact">Contact us</MenuItems>
       </Box>
       <Overlay
@@ -99,12 +98,9 @@ const Header = props => {
         flexGrow={1}
         justifyContent="flex-end"
       >
-        <Box mb={8} py={24}>
+        <Box mb={8} py={16}>
           <MenuItems mobile slug="/">
             Home
-          </MenuItems>
-          <MenuItems mobile slug="/about">
-            About
           </MenuItems>
           <MenuItems mobile slug="/contact">
             Contact us
@@ -125,7 +121,7 @@ const Header = props => {
           ></Box>
           <Link to="/">
             <Text fontSize="3xl" fontWeight="bold">
-              Soley
+              MyPrivacy
             </Text>
           </Link>
         </Flex>

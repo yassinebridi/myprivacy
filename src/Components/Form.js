@@ -160,18 +160,18 @@ export default function HookForm() {
           borderBottom="4px solid"
           mb={4}
         >
-          Soley Solutions
+          MyPrivacy
         </Text>
         <Link
           fontSize={["md", "lg", "xl", "2xl"]}
           fontWeight="normal"
           letterSpacing={"-.1rem"}
           borderBottom="3px solid"
-          href="mailto:support@soley.tech"
+          href="mailto:support@myprivacy.tech"
           isExternal
           mb={4}
         >
-          support@soley.tech
+          support@myprivacy.tech
         </Link>
         <Link
           fontSize={["md", "lg", "xl", "2xl"]}

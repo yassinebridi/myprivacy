@@ -10,6 +10,8 @@ import {
   Icon,
   Avatar
 } from "@chakra-ui/core";
+import man from "../images/man.svg";
+import testMan from "../images/testMan.jpeg";
 
 const Testimony = () => {
   return (
@@ -49,12 +51,12 @@ const Testimony = () => {
             textAlign="left"
             px={[12, 20, 32, 0]}
           >
-            Having worked intensively with Soley on multiple projects, our
+            Having worked intensively with MyPrivacy on multiple projects, our
             partnership has been a professional and productive experience with
             impressive results to date. The team is responsive, full of ideas
-            and delivers on their commitments. I can highly recommend Soley as a
-            serious partner in modern Security involving AI and Face Deteciton
-            technologies.
+            and delivers on their commitments. I can highly recommend MyPrivacy
+            as a serious partner in modern Security involving AI and Face
+            Deteciton technologies.
           </Text>
           <Stack
             isInline
@@ -74,18 +76,18 @@ const Testimony = () => {
             alignItems="center"
           >
             <Avatar
-              name="Segun Adebayo"
-              src="https://bit.ly/sage-adebayo"
+              name="William Alfie"
+              src={testMan}
               mr={4}
               width={["32px", "32px", "48px", "48px"]}
               height={["32px", "32px", "48px", "48px"]}
             />
             <Box textAlign="left">
               <Text fontWeight="bold" fontSize={["sm", "sm", "md", "md"]}>
-                Segun Adebayo
+                William Alfie
               </Text>
               <Text fontWeight="medium" fontSize={["xs", "xs", "sm", "sm"]}>
-                Maker and maintainer of ChakraUI
+                CEO & Co-founder of @MayaHotels
               </Text>
             </Box>
           </Flex>
@@ -97,11 +99,7 @@ const Testimony = () => {
           mt={55}
           display={{ xs: "none", sm: "none", md: "none", lg: "block" }}
         >
-          <Image
-            src="https://res.cloudinary.com/gokoura/image/upload/v1583114338/1041_Converted_iafqmf.svg"
-            alt="lock"
-            width="100%"
-          ></Image>
+          <Image src={man} alt="lock" width="100%"></Image>
         </Box>
       </Flex>
     </Box>
