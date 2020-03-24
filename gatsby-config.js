@@ -20,6 +20,19 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `MyPrivacy`,
+        short_name: `MyPrivacy`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#e53e3e`,
+        display: `standalone`,
+        lang: `en`,
+        icon: `src/images/icon.png`
+      }
+    },
+    {
       resolve: "gatsby-plugin-chakra-ui",
       options: {
         isResettingCSS: true, // optional, default to true
