@@ -51,7 +51,7 @@ const Talk = () => {
             </Text>
             <Text fontSize={["xs", "sm", "lg", "xl"]} mt={[1, 2, 3, 4]}>
               Tell us about your project, get a quick estimate and a plan for
-              making it live.
+              making it super secure.
             </Text>
           </Box>
           <Box

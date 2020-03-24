@@ -51,12 +51,12 @@ const Testimony = () => {
             textAlign="left"
             px={[12, 20, 32, 0]}
           >
-            Having worked intensively with MyPrivacy on multiple projects, our
-            partnership has been a professional and productive experience with
-            impressive results to date. The team is responsive, full of ideas
-            and delivers on their commitments. I can highly recommend MyPrivacy
-            as a serious partner in modern Security involving AI and Face
-            Deteciton technologies.
+            Having worked intensively with MyPrivacy on multiple hotel projects,
+            our partnership has been a professional and productive experience
+            with impressive results to date. The product is impressive, fully
+            customizable and delivers on its promises. I can highly recommend
+            MyPrivacy as a serious tool in modern Security involving AI and Face
+            Deteciton technologies, to maximize the security of your projects.
           </Text>
           <Stack
             isInline
