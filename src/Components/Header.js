@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Box, Heading, Flex, Text, Button } from "@chakra-ui/core";
+import { Box, Heading, Flex, Text, Button, Image } from "@chakra-ui/core";
 import { MdClose, MdMenu } from "react-icons/md";
 import urlSlug from "url-slug";
 import styled from "styled-components";
+import logo from "../images/logo.svg";
 
 const Overlay = styled(Box)`
   position: fixed;
@@ -57,9 +58,7 @@ const Header = props => {
     >
       <Flex align="center" mr={5}>
         <Link to="/">
-          <Heading as="h1" size="lg" letterSpacing={"-.1rem"}>
-            MyPrivacy
-          </Heading>
+          <Image src={logo} alt="MyPrivacy" width="150px"></Image>
         </Link>
       </Flex>
 
@@ -120,9 +119,7 @@ const Header = props => {
             color="gray.600"
           ></Box>
           <Link to="/">
-            <Text fontSize="3xl" fontWeight="bold">
-              MyPrivacy
-            </Text>
+            <Image src={logo} alt="MyPrivacy" width="150px"></Image>
           </Link>
         </Flex>
       </Overlay>

@@ -10,6 +10,7 @@ import {
   Flex,
   Heading,
   Text,
+  Image,
   Link,
   Grid,
   Textarea,
@@ -19,6 +20,7 @@ import {
   AlertDescription
 } from "@chakra-ui/core";
 import addToMailchimp from "gatsby-plugin-mailchimp";
+import logo from "../images/logo.svg";
 
 export default function HookForm() {
   const { handleSubmit, errors, register, formState, reset } = useForm();
@@ -141,27 +143,14 @@ export default function HookForm() {
         display="flex"
         flexDirection="column"
       >
-        <Text
-          as="h1"
-          fontSize="5xl"
-          fontWeight="bolder"
-          letterSpacing={"-.1rem"}
-          mb={4}
+        <Box
+          mb={10}
           textAlign="right"
           display={["none", "none", "block", "block"]}
         >
-          LOGO
-        </Text>
-        <Text
-          as="h1"
-          fontSize={["md", "lg", "xl", "2xl"]}
-          fontWeight="medium"
-          letterSpacing={"-.1rem"}
-          borderBottom="4px solid"
-          mb={4}
-        >
-          MyPrivacy
-        </Text>
+          <Image src={logo} alt="MyPrivacy" width="180px"></Image>
+        </Box>
+
         <Link
           fontSize={["md", "lg", "xl", "2xl"]}
           fontWeight="normal"
@@ -169,7 +158,7 @@ export default function HookForm() {
           borderBottom="3px solid"
           href="mailto:support@myprivacy.tech"
           isExternal
-          mb={4}
+          mb={8}
         >
           support@myprivacy.tech
         </Link>
@@ -180,7 +169,7 @@ export default function HookForm() {
           borderBottom="3px solid"
           href="tel:+212614630080"
           isExternal
-          mb={4}
+          mb={8}
         >
           +212 614-630080
         </Link>
