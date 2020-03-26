@@ -20,9 +20,22 @@ import {
   AlertDescription
 } from "@chakra-ui/core";
 import addToMailchimp from "gatsby-plugin-mailchimp";
-import logo from "../images/logo.svg";
+import { graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 
 export default function HookForm() {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  `);
+
   const { handleSubmit, errors, register, formState, reset } = useForm();
   const [err, setErr] = React.useState("");
 
@@ -148,7 +161,11 @@ export default function HookForm() {
           textAlign="right"
           display={["none", "none", "block", "block"]}
         >
-          <Image src={logo} alt="MyPrivacy" width="180px"></Image>
+          <Img
+            fluid={data.file.childImageSharp.fluid}
+            alt="MyPrivacy"
+            style={{ width: "180px" }}
+          />
         </Box>
 
         <Link

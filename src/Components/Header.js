@@ -4,7 +4,8 @@ import { Box, Heading, Flex, Text, Button, Image } from "@chakra-ui/core";
 import { MdClose, MdMenu } from "react-icons/md";
 import urlSlug from "url-slug";
 import styled from "styled-components";
-import logo from "../images/logo.svg";
+import { graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 
 const Overlay = styled(Box)`
   position: fixed;
@@ -41,7 +42,18 @@ const Header = props => {
   const [show, setShow] = React.useState(false);
   const handleToggle = () => setShow(!show);
 
-  console.log(show);
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "logo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <Flex
       as="nav"
@@ -58,7 +70,11 @@ const Header = props => {
     >
       <Flex align="center" mr={5}>
         <Link to="/">
-          <Image src={logo} alt="MyPrivacy" width="150px"></Image>
+          <Img
+            fluid={data.file.childImageSharp.fluid}
+            alt="MyPrivacy"
+            style={{ width: "190px" }}
+          />
         </Link>
       </Flex>
 
@@ -119,7 +135,11 @@ const Header = props => {
             color="gray.600"
           ></Box>
           <Link to="/">
-            <Image src={logo} alt="MyPrivacy" width="150px"></Image>
+            <Img
+              fluid={data.file.childImageSharp.fluid}
+              alt="MyPrivacy"
+              style={{ width: "150px" }}
+            />
           </Link>
         </Flex>
       </Overlay>
