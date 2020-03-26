@@ -72,7 +72,7 @@ const Benefits = () => {
       my={{ md: 0, xl: 6, lg: 4 }}
       borderRadius={20}
       textAlign="center"
-      bg="#fafafa"
+      bg="white"
       color="gray.600"
     >
       <Text fontSize={["xs", "xs", "xs", "sm"]}>PRODUCT WITH BENEFITS</Text>

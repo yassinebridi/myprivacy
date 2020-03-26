@@ -46,7 +46,7 @@ const Header = props => {
     query {
       file(relativePath: { eq: "logo.png" }) {
         childImageSharp {
-          fluid(maxWidth: 1000) {
+          fluid(maxWidth: 200) {
             ...GatsbyImageSharpFluid_tracedSVG
           }
         }
