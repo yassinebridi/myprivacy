@@ -1,23 +1,20 @@
 import React from "react";
 import { Box, Heading, Flex, Text, Button, Image, Grid } from "@chakra-ui/core";
-import key from "../images/key.svg";
-import lock from "../images/lock.svg";
-import time from "../images/time.svg";
-import circuit from "../images/circuit.svg";
+import { graphql, Link, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 
-const Feature = ({ image, title, desc }) => {
+const Feature = ({ image, title, desc, alt }) => {
   return (
     <Box
       mx={{ sm: 6, md: 2, xl: 3 }}
       display={{ sm: "flex", md: "block", lg: "block" }}
       alignItems={{ sm: "center", md: null, lg: null }}
     >
-      <Image
-        src={image}
-        alt="lock"
-        size="120px"
-        margin="0 auto 10px auto"
-      ></Image>
+      <Img
+        fluid={image}
+        alt={alt}
+        style={{ width: "120px", margin: "0 auto 10px auto" }}
+      />
       <Box
         textAlign={{ sm: "left", md: "center", lg: "center" }}
         ml={{ sm: 6, md: 0, lg: 0 }}
@@ -34,6 +31,39 @@ const Feature = ({ image, title, desc }) => {
 };
 
 const Benefits = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      circuit: file(relativePath: { eq: "circuit.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300, quality: 100) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      key: file(relativePath: { eq: "key.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300, quality: 100) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      lock: file(relativePath: { eq: "lock.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300, quality: 100) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+      time: file(relativePath: { eq: "time.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 300, quality: 100) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  `);
+
   return (
     <Box
       px={{ xl: 16, lg: 0 }}
@@ -68,30 +98,35 @@ const Benefits = () => {
         gap={10}
         px={{ xs: 8, sm: 12, md: 12 }}
         py={{ xs: 12, sm: 8, md: 8 }}
+        alignItems="baseline"
       >
         <Feature
           title="Secure"
           desc="MyPrivacy is very secure as there is simply no access to the lock –
             unlike mechanical locks which can be lock picked."
-          image={lock}
+          image={data.lock.childImageSharp.fluid}
+          alt="lock"
         />
         <Feature
           title="Reliable"
           desc="Electronic mechanisms are far more durable than physical ones.
             There’s very little which can be broken or worn out."
-          image={circuit}
+          image={data.circuit.childImageSharp.fluid}
+          alt="circuit"
         />
         <Feature
           title="Easy Access"
           desc="MyPrivacy uses Face Detection techniques to unlock your safe, it takes
             almost not time."
-          image={time}
+          image={data.time.childImageSharp.fluid}
+          alt="time"
         />
         <Feature
           title="Convenience"
           desc="You never have to worry about carrying around or losing your locking
             key again."
-          image={key}
+          image={data.key.childImageSharp.fluid}
+          alt="key"
         />
       </Grid>
     </Box>

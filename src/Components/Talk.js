@@ -11,9 +11,22 @@ import {
   Avatar
 } from "@chakra-ui/core";
 import Form from "./Form";
-import talk from "../images/talk.svg";
+import { graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 
 const Talk = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "talk.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+            src
+          }
+        }
+      }
+    }
+  `);
   return (
     <>
       <Box
@@ -28,7 +41,12 @@ const Talk = () => {
           "rgb(255, 241, 241)",
           "rgb(255, 241, 241)"
         ]}
-        backgroundImage={[`url(${talk})`, `url(${talk})`, "none", "none"]}
+        backgroundImage={[
+          `url(${data.file.childImageSharp.fluid.src})`,
+          `url(${data.file.childImageSharp.fluid.src})`,
+          "none",
+          "none"
+        ]}
         backgroundAttachment={["fixed", "fixed", "none", "none"]}
         textShadow="2px 2px 5px rgba(0,0,0,0.26)"
       >
@@ -60,12 +78,11 @@ const Talk = () => {
             ml={15}
             display={["none", "none", "block", "block"]}
           >
-            <Image
-              transform="scaleX(-1)"
-              src={talk}
+            <Img
+              fluid={data.file.childImageSharp.fluid}
               alt="person talking"
-              width="100%"
-            ></Image>
+              style={{ width: "100%", transform: "scaleX(-1)" }}
+            />
           </Box>
         </Flex>
       </Box>

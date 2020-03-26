@@ -32,7 +32,7 @@ const Hero = props => {
       <Flex
         py={[4, 6, 8, 10]}
         align={["center", "center", "start", "start"]}
-        px={[8, 16, 24, 32]}
+        px={[8, 16, 24, 40]}
         flexDirection={{ xs: "column", sm: "column", md: "row", lg: "row" }}
       >
         <Box display={{ md: "flex" }} pt={10} flexGrow={1} flexBasis={0}>
@@ -71,6 +71,7 @@ const Hero = props => {
           flexBasis={0}
           display="flex"
           justifyContent="flex-end"
+          mr={[16, 16, 0, 0]}
           width={["150px", "200px", "150px", "350px"]}
         >
           <Img

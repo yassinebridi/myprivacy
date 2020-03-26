@@ -10,14 +10,24 @@ import {
   Icon,
   Avatar
 } from "@chakra-ui/core";
-import man from "../images/man.svg";
+import { graphql, useStaticQuery } from "gatsby";
+import Img from "gatsby-image";
 import testMan from "../images/testMan.jpeg";
 
 const Testimony = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "man.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 1000) {
+            ...GatsbyImageSharpFluid_tracedSVG
+          }
+        }
+      }
+    }
+  `);
   return (
     <Box
-      // padding="2rem 4rem"
-      // margin="1.5rem 4rem"
       borderRadius={20}
       textAlign="center"
       color="gray.600"
@@ -99,7 +109,11 @@ const Testimony = () => {
           mt={55}
           display={{ xs: "none", sm: "none", md: "none", lg: "block" }}
         >
-          <Image src={man} alt="lock" width="100%"></Image>
+          <Img
+            fluid={data.file.childImageSharp.fluid}
+            alt="Business Man"
+            style={{ width: "100%" }}
+          />
         </Box>
       </Flex>
     </Box>
