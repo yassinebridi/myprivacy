@@ -18,7 +18,7 @@
     "gatsby-plugin-google-fonts": "1.0.1",
     "gatsby-plugin-mailchimp": "5.1.2",
     "gatsby-plugin-manifest": "2.3.2",
-    "gatsby-plugin-sharp": "2.5.3",
+    "gatsby-plugin-sharp": "4.25.1",
     "gatsby-plugin-styled-components": "3.1.19",
     "gatsby-source-filesystem": "2.2.2",
     "gatsby-transformer-sharp": "2.4.2",
